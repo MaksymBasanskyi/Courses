@@ -21,6 +21,18 @@ public class DataManager {
         return value;
     }
 
+    public int getInt() {
+        this.output.publishRow("please provide valid int");
+        int value;
+        try {
+            value = Integer.parseInt(input.getRow());
+        } catch (NumberFormatException exception) {
+            value = getInt();
+        }
+
+        return value;
+    }
+
     public String getsRow() {
         return input.getRow();
     }
