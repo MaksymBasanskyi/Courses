@@ -1,7 +1,11 @@
 package com.company.Lib.Model.Enum;
 
 public enum TaskType {
-    DEFAULT("default");
+    DEFAULT("default"),
+    FLOAT_NUMBER_RANGE("range"),
+    MIN_MAX("minMax"),
+    SHELTER("shelter"),
+    HTTP_ERROR("Errors");
     private String command;
 
     TaskType(String command) {
