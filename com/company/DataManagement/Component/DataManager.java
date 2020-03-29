@@ -9,6 +9,10 @@ public class DataManager {
         this.input = input;
     }
 
+    public void publishRow(String row) {
+        this.output.publishRow(row);
+    }
+
     public Float getFloat() {
         this.output.publishRow("please provide valid float");
         Float value;
@@ -33,7 +37,7 @@ public class DataManager {
         return value;
     }
 
-    public String getsRow() {
+    public String getRow() {
         return input.getRow();
     }
 }
