@@ -3,7 +3,7 @@ package com.company.Lib.Component;
 import com.company.Lib.Model.Enum.TaskType;
 
 public class App {
-    private Dic dic = new Dic();
+    private final Dic dic = new Dic();
 
     public void run(String[] args) {
         TaskType taskType = null;
@@ -12,6 +12,18 @@ public class App {
         } else {
             taskType = TaskType.getByCommand(args[0]);
         }
-        dic.getTask(taskType).run();
+        getTask(taskType).run();
+    }
+
+    private TaskInterface getTask(TaskType taskType) {
+        TaskInterface task = null;
+        switch (taskType) {
+            case DEFAULT:
+                break;
+            default:
+                throw new IllegalArgumentException(String.format("%s: task not found", taskType.getCommand()));
+        }
+
+        return task;
     }
 }

@@ -3,11 +3,10 @@ package com.company.Lib.Component;
 import com.company.DataManagement.Component.DataManager;
 import com.company.DataManagement.Component.Input;
 import com.company.DataManagement.Component.Output;
-import com.company.Lib.Model.Enum.TaskType;
 
 import java.util.Scanner;
 
-public class Dic {
+class Dic {
 
     private DataManager dataManager;
     private Input input;
@@ -23,17 +22,5 @@ public class Dic {
 
     private Input getInput() {
         return input == null ? input = new Input(new Scanner(System.in)) : input;
-    }
-
-    public TaskInterface getTask(TaskType taskType) {
-        TaskInterface task = null;
-        switch (taskType) {
-            case DEFAULT:
-                break;
-            default:
-                throw new IllegalArgumentException(String.format("%s: task not found", taskType.getCommand()));
-        }
-
-        return task;
     }
 }
