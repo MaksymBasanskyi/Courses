@@ -1,40 +1,34 @@
 package com.company.Checker.Component;
 
-import com.company.Checker.Dao.FloatNumberRepository;
-import com.company.Checker.Dao.RangeRepository;
-import com.company.Checker.Model.FloatNumber;
 import com.company.Checker.Model.Range;
 import com.company.DataManagement.Component.OutputInterface;
-import com.company.Lib.Component.TaskInterface;
+import com.company.Lib.Component.TaskInterface;;
+import com.company.Lib.Dao.RepositoryInterface;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class FloatNumberTask implements TaskInterface {
-    private FloatNumberRepository floatNumberRepository;
-    private RangeRepository rangeRepository;
+    private RepositoryInterface<Float> floatRepository;
+    private RepositoryInterface<Range> rangeRepository;
     private OutputInterface output;
 
-    public FloatNumberTask(
-            FloatNumberRepository floatNumberRepository,
-            RangeRepository rangeRepository,
-            OutputInterface output
-    ) {
-        this.floatNumberRepository = floatNumberRepository;
+    public FloatNumberTask(RepositoryInterface<Float> floatRepository, RepositoryInterface<Range> rangeRepository, OutputInterface output) {
+        this.floatRepository = floatRepository;
         this.rangeRepository = rangeRepository;
         this.output = output;
     }
 
     public void run() {
         Range range = rangeRepository.take();
-        ArrayList<FloatNumber> floatNumbers = floatNumberRepository.takeList();
+        List<Float> floatNumbers = floatRepository.takeList();
 
         boolean allInRange = true;
-        for (FloatNumber floatNumber: floatNumbers) {
-            boolean inRange = range.contains(floatNumber);
+        for (Float aFloat: floatNumbers) {
+            boolean inRange = range.contains(aFloat);
             allInRange &= inRange;
             output.publishRow(String.format(
                     "Number %f is %sin range [%d, %d]",
-                    floatNumber.getNumber(),
+                    aFloat,
                     inRange ? "" : "not ",
                     range.getLow(),
                     range.getHigh()

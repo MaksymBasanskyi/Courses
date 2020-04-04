@@ -28,7 +28,6 @@ public class App {
                 task = dic.getErrorCodeTask();
                 break;
             case SHELTER:
-            case DEFAULT:
                 task = dic.getDogShelterTask();
                 break;
             default:

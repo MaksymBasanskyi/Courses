@@ -17,7 +17,7 @@ public class Range {
         return low;
     }
 
-    public boolean contains(FloatNumber floatNumber) {
-        return floatNumber.getNumber() >= low && floatNumber.getNumber() <= high;
+    public boolean contains(Float  Float) {
+        return Float >= low && Float <= high;
     }
 }
