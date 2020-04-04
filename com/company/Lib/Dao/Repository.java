@@ -21,9 +21,9 @@ public class Repository<E> implements RepositoryInterface<E> {
     }
 
     @Override
-    public List<E> takeList() {
+    public List<E> takeList(int limit) {
         ArrayList<E> list = new ArrayList<>();
-        for(int i=1; i<=3; i++){
+        for(int i=1; i<=limit; i++){
             list.add(take());
         }
 

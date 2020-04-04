@@ -16,9 +16,13 @@ public class App {
     }
 
     private TaskInterface getTask(TaskType taskType) {
-        TaskInterface task = null;
+        TaskInterface task;
         switch (taskType) {
+            case ZOO:
+                task = dic.getZooTask();
+                break;
             case DEFAULT:
+                task = dic.getUniversityTask();
                 break;
             default:
                 throw new IllegalArgumentException(String.format("%s: task not found", taskType.getCommand()));
