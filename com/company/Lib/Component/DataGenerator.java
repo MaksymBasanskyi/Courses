@@ -10,7 +10,17 @@ public class DataGenerator {
     }
 
     public <T> T take(Class<T> type) {
-        Object model = null;
+        Object model;
+
+        if (type.equals(Float.class)) {
+            model = dataManager.getFloat();
+        } else if (type.equals(Integer.class)) {
+            model = dataManager.getInt();
+        } else if (type.equals(String.class)) {
+            model = dataManager.getRow();
+        } else {
+            throw new IllegalArgumentException(String.format("%s: type not found", type.getName()));
+        }
 
         return (T) model;
     }
