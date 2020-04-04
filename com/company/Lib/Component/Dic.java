@@ -11,6 +11,7 @@ class Dic {
     private DataManager dataManager;
     private Input input;
     private Output output;
+    private DataGenerator dataGenerator;
 
     private DataManager getDataManager() {
         return dataManager == null ? dataManager = new DataManager(getOutput(), getInput()) : dataManager;
@@ -22,5 +23,9 @@ class Dic {
 
     private Input getInput() {
         return input == null ? input = new Input(new Scanner(System.in)) : input;
+    }
+
+    private DataGenerator getDataGenerator() {
+        return dataGenerator == null ? dataGenerator = new DataGenerator(getDataManager()) : dataGenerator;
     }
 }
