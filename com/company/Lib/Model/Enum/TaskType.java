@@ -1,7 +1,7 @@
 package com.company.Lib.Model.Enum;
 
 public enum TaskType {
-    DEFAULT("default"), ZOO("zoo");
+    DEFAULT("default"), ZOO("zoo"), UNIVERSITY("university");
     private String command;
 
     TaskType(String command) {

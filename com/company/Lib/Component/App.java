@@ -22,6 +22,7 @@ public class App {
                 task = dic.getZooTask();
                 break;
             case DEFAULT:
+            case UNIVERSITY:
                 task = dic.getUniversityTask();
                 break;
             default:
