@@ -1,7 +1,9 @@
 package com.company.Lib.Model.Enum;
 
 public enum TaskType {
-    DEFAULT("default");
+    DEFAULT("default"),
+    TEN_INTEGERS_TASK("tenInt"),
+    DEPARTMENT("department");
     private String command;
 
     TaskType(String command) {
