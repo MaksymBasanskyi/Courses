@@ -16,9 +16,14 @@ public class App {
     }
 
     private TaskInterface getTask(TaskType taskType) {
-        TaskInterface task = null;
+        TaskInterface task;
         switch (taskType) {
+            case INTEGERS:
+                task = dic.getCollectionsTask();
+                break;
             case DEFAULT:
+            case EMPLOYEE_MAP:
+                task = dic.getEmployeeMapTask();
                 break;
             default:
                 throw new IllegalArgumentException(String.format("%s: task not found", taskType.getCommand()));

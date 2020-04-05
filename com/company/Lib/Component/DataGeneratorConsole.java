@@ -2,10 +2,10 @@ package com.company.Lib.Component;
 
 import com.company.DataManagement.Component.DataManager;
 
-public class DataGenerator {
+public class DataGeneratorConsole implements DataGeneratorInterface {
     private DataManager dataManager;
 
-    public DataGenerator(DataManager dataManager) {
+    DataGeneratorConsole(DataManager dataManager) {
         this.dataManager = dataManager;
     }
 
