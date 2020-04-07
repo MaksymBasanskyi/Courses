@@ -16,9 +16,17 @@ public class App {
     }
 
     private TaskInterface getTask(TaskType taskType) {
-        TaskInterface task = null;
+        TaskInterface task;
         switch (taskType) {
+            case USERNAME:
+                task = dic.getUserNameTask();
+                break;
+            case LOGIN_VALIDATION:
+                task = dic.getLoginValidationTask();
+                break;
+            case STRING:
             case DEFAULT:
+                task = dic.getStringTask();
                 break;
             default:
                 throw new IllegalArgumentException(String.format("%s: task not found", taskType.getCommand()));

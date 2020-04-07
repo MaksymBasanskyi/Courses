@@ -1,7 +1,10 @@
 package com.company.Lib.Model.Enum;
 
 public enum TaskType {
-    DEFAULT("default");
+    DEFAULT("default"),
+    USERNAME("UserName"),
+    STRING("string"),
+    LOGIN_VALIDATION("loginValidation");
     private String command;
 
     TaskType(String command) {
