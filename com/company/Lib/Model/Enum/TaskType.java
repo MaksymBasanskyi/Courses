@@ -1,7 +1,10 @@
 package com.company.Lib.Model.Enum;
 
 public enum TaskType {
-    DEFAULT("default");
+    DEFAULT("default"),
+    STUDY_JAVA("studyJava"),
+    TWO_THREADS("twoThreads"),
+    THREE_THREADS("threeThreads");
     private String command;
 
     TaskType(String command) {
