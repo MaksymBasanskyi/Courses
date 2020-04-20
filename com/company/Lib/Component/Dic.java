@@ -3,6 +3,11 @@ package com.company.Lib.Component;
 import com.company.DataManagement.Component.DataManager;
 import com.company.DataManagement.Component.Input;
 import com.company.DataManagement.Component.Output;
+import com.company.Garden.Component.GardenTask;
+import com.company.Garden.Model.Plant;
+import com.company.Lib.Dao.Repository;
+import com.company.SquareCalcTask.Model.Rectangle;
+import com.company.SquareCalcTask.Component.SquareCalcTask;
 
 import java.util.Scanner;
 
@@ -15,6 +20,14 @@ class Dic {
 
     private DataManager getDataManager() {
         return dataManager == null ? dataManager = new DataManager(getOutput(), getInput()) : dataManager;
+    }
+
+    SquareCalcTask getSquareCalcTask() {
+        return new SquareCalcTask(new Repository<>(getDataGeneratorConsole(), Rectangle.class), getOutput());
+    }
+
+    GardenTask getGardenTask() {
+        return new GardenTask(new Repository<>(getDataGeneratorConsole(), Plant.class), getOutput());
     }
 
     private Output getOutput() {

@@ -16,9 +16,14 @@ public class App {
     }
 
     private TaskInterface getTask(TaskType taskType) {
-        TaskInterface task = null;
+        TaskInterface task;
         switch (taskType) {
             case DEFAULT:
+            case GARDEN:
+                task = dic.getGardenTask();
+                break;
+            case SQUARE_CALC:
+                task = dic.getSquareCalcTask();
                 break;
             default:
                 throw new IllegalArgumentException(String.format("%s: task not found", taskType.getCommand()));
